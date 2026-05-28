@@ -1,0 +1,16 @@
+# Design extraction temp files
+design_decompressed.txt
+design_response.json
+design_response_text.txt
+raw_design.bin
+design_extracted/
+
+# Raw source photos (not for web)
+Pictures/
+
+# Temp screenshots
+temporary screenshots/
+
+# OS
+.DS_Store
+Thumbs.db

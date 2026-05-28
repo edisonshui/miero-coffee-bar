@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF7F1">
+
+<title>Miero Coffee Bar — Seattle Chinatown/ID. Open daily, until late.</title>
+<meta name="description" content="A neighborhood coffee bar in Seattle's Chinatown–International District. Specialty espresso, ceremonial matcha, toffee miso lattes, sparkling Cieros. 665 S King St. Open until 10, weekends until 11.">
+<meta name="keywords" content="Miero, Miero Coffee Bar, Seattle coffee, Chinatown International District, CID, specialty coffee, matcha, toffee miso, late night coffee Seattle">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.cafe">
+<meta property="og:site_name" content="Miero Coffee Bar">
+<meta property="og:title" content="Miero Coffee Bar — Seattle CID">
+<meta property="og:description" content="A neighborhood coffee bar in Seattle's Chinatown–International District. Open daily, until late.">
+<meta property="og:url" content="https://miero.coffee/">
+<meta property="og:image" content="assets/photos/bar-interior-menu.jpg">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Miero Coffee Bar — Seattle">
+<meta name="twitter:description" content="Specialty coffee. Ceremonial matcha. Open late. 665 S King St.">
+<meta name="twitter:image" content="assets/photos/bar-interior-menu.jpg">
+
+<link rel="canonical" href="https://miero.coffee/">
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Miero Coffee Bar",
+  "image": "https://miero.coffee/assets/photos/bar-interior-menu.jpg",
+  "url": "https://miero.coffee/",
+  "telephone": "+1-206-222-1690",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "665 S King St",
+    "addressLocality": "Seattle",
+    "addressRegion": "WA",
+    "postalCode": "98104",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 47.5984,
+    "longitude": -122.3243
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"],
+      "opens": "07:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Friday","Saturday"],
+      "opens": "07:00",
+      "closes": "23:00"
+    }
+  ],
+  "servesCuisine": ["Coffee","Tea","Matcha","Korean-American"],
+  "sameAs": ["https://www.instagram.com/miero.coffeebar"]
+}
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Mark <html> so CSS can pre-hide animated elements and prevent FOUC.
+  // Safety: if animations.js hasn't run after 1.5s (e.g. GSAP CDN failed),
+  // drop the class so nothing stays hidden.
+  document.documentElement.classList.add('has-anim');
+  setTimeout(function () {
+    if (!document.documentElement.classList.contains('anim-ready')) {
+      document.documentElement.classList.remove('has-anim');
+    }
+  }, 1500);
+</script>
+</head>
+<body>
+
+<!-- ────────── HEADER ────────── -->
+<header class="site-header" role="banner">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand" aria-label="Miero — Home">
+      <span data-miero-mark></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="#concept">Concept</a>
+      <a class="nav-link" href="#menu">Menu</a>
+      <a class="nav-link" href="#gallery">Space</a>
+      <a class="nav-link" href="#visit">Visit</a>
+      <span class="open-pill" data-open-pill aria-live="polite">
+        <span class="open-pill__dot" aria-hidden="true"></span>
+        <span data-pill-text>Open until 10pm</span>
+      </span>
+    </nav>
+
+    <button class="nav-menu-btn" type="button" aria-label="Open menu" data-drawer-open>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="4" y1="8"  x2="20" y2="8"/>
+        <line x1="4" y1="16" x2="20" y2="16"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ────────── DRAWER ────────── -->
+<div class="drawer-backdrop" data-drawer-backdrop></div>
+<aside class="drawer" data-drawer aria-label="Mobile menu">
+  <div class="drawer__head">
+    <span class="open-pill" data-open-pill>
+      <span class="open-pill__dot"></span>
+      <span data-pill-text>Open until 10pm</span>
+    </span>
+    <button class="drawer__close" type="button" aria-label="Close menu" data-drawer-close>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="drawer__nav">
+    <a class="drawer__link" href="#concept">Concept</a>
+    <a class="drawer__link" href="#menu">Menu</a>
+    <a class="drawer__link" href="#gallery">Space</a>
+    <a class="drawer__link" href="#visit">Visit</a>
+  </nav>
+  <div class="drawer__foot">
+    <div class="drawer__sig" data-miero-script></div>
+    <p class="drawer__meta">
+      665 S King St, Seattle WA 98104<br>
+      (206)&nbsp;222-1690 · @miero.coffeebar
+    </p>
+  </div>
+</aside>
+
+<!-- ────────── HERO ────────── -->
+<main id="top">
+<section class="hero" aria-label="Welcome">
+
+  <div class="hero__video" aria-hidden="true">
+    <video
+      autoplay muted loop playsinline
+      preload="metadata"
+      poster="assets/video/hero-poster.jpg"
+      aria-hidden="true">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+      <img src="assets/video/hero-poster.jpg" alt="">
+    </video>
+  </div>
+
+  <div class="hero__vignette" aria-hidden="true"></div>
+
+  <div class="wrap hero__content">
+    <span class="label hero__eyebrow">Specialty coffee · Seattle Chinatown/ID</span>
+    <h1 class="display hero__headline">
+      Open daily,<br>
+      <em>until late.</em>
+    </h1>
+    <p class="hero__sub">
+      Espresso pulled fresh. Ceremonial matcha, whisked. Toffee miso lattes
+      and sparkling Cieros — made to order, all day, all night.
+    </p>
+    <div class="hero__actions">
+      <a href="#menu" class="btn btn--primary">
+        See the menu
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="#visit" class="btn btn--ghost">Find us</a>
+    </div>
+  </div>
+
+  <div class="hero__corner" aria-hidden="true">
+    665 King · Seattle
+  </div>
+</section>
+
+<!-- ────────── CONCEPT ────────── -->
+<section class="concept" id="concept" aria-label="Concept">
+  <div class="wrap">
+    <div class="concept__grid">
+      <div class="concept__text" data-reveal>
+        <span class="label">The Concept</span>
+        <h2 class="section-title" data-comment-anchor="82aa157567-h2">
+          A coffee bar, considered <em style="font-style:italic;color:var(--fg-accent);font-variation-settings:'opsz' 96, 'WONK' 0">to the inch.</em>
+        </h2>
+        <p class="concept__body">
+          Miero is a small specialty bar on the corner of King and Maynard.
+          Nation and Nicole opened it in 2025 — espresso pulled at the bar,
+          ceremonial matcha whisked to order, Korean-leaning flavors that
+          don't announce themselves.
+        </p>
+        <p class="concept__body">
+          The space is plant-filled, low-lit, late. The drinks are the point.
+        </p>
+      </div>
+
+      <div class="concept__image" data-reveal>
+        <img src="assets/photos/concept-storefront.jpg" alt="Miero interior — daylight through the steel-frame storefront window, the painted MIERO wordmark in mint sage, plants and walnut shelving lining the back bar.">
+      </div>
+    </div>
+
+    <div class="pillars" data-reveal>
+      <article class="pillar">
+        <span class="pillar__num">— 01</span>
+        <h3 class="pillar__name">Sourcing</h3>
+        <p class="pillar__desc">
+          Single-origin espresso, ceremonial-grade matcha, dairy and oat
+          from producers we've stood across from in person.
+        </p>
+      </article>
+      <article class="pillar">
+        <span class="pillar__num">— 02</span>
+        <h3 class="pillar__name">Recipes</h3>
+        <p class="pillar__desc">
+          Built in-house — toffee miso cream, vanilla, strawberry purée.
+          Restrained sweetness. Korean-leaning, never branded as fusion.
+        </p>
+      </article>
+      <article class="pillar">
+        <span class="pillar__num">— 03</span>
+        <h3 class="pillar__name">Preparation</h3>
+        <p class="pillar__desc">
+          Made to order on a two-group La Marzocco. Iced when the recipe
+          asks for it. No sequence is shortcut.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ────────── MENU ────────── -->
+<section class="menu" id="menu" aria-label="Menu">
+  <div class="wrap">
+    <div class="menu__head">
+      <div>
+        <span class="label">The Menu</span>
+        <h2 class="section-title" style="margin-top:14px" data-comment-anchor="4afe0cdae4-h2">From the bar tonight.</h2>
+        <p class="menu__intro">
+          Sizes shown 12&nbsp;oz / 16&nbsp;oz. Signatures are iced only — we plan it that way.
+          Substitute oat, almond or soy. Add a syrup if you'd like.
+        </p>
+      </div>
+    </div>
+
+    <div class="menu__tabs" role="tablist" aria-label="Drink categories">
+      <button class="menu__tab" role="tab" data-tab="signatures" aria-selected="true">
+        Signatures<span class="count">5</span>
+      </button>
+      <button class="menu__tab" role="tab" data-tab="coffee" aria-selected="false">
+        Coffee<span class="count">4</span>
+      </button>
+      <button class="menu__tab" role="tab" data-tab="not-coffee" aria-selected="false">
+        Not Coffee<span class="count">6</span>
+      </button>
+      <button class="menu__tab" role="tab" data-tab="cieros" aria-selected="false">
+        Cieros<span class="count">2</span>
+      </button>
+    </div>
+
+    <!-- Signatures -->
+    <div class="menu__panel is-active" data-panel="signatures" role="tabpanel">
+      <div class="cat__head">
+        <h3>Signatures</h3>
+        <span class="cat__sub">Iced only — 12 oz / 16 oz</span>
+      </div>
+      <div class="items">
+        <div class="item item--featured">
+          <div>
+            <h4 class="item__name">Toffee Miso<span class="item__featured-tag">Featured</span></h4>
+            <p class="item__desc">Espresso, milk, vanilla, toffee miso cream.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price">7.<sup>75</sup></span>
+            <span class="price">8.<sup>50</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <h4 class="item__name">Vanilla Bean</h4>
+            <p class="item__desc">Espresso, milk, vanilla, vanilla cream.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price">7.<sup>50</sup></span>
+            <span class="price">8.<sup>25</sup></span>
+          </div>
+        </div>
+        <div class="item item--featured">
+          <div>
+            <h4 class="item__name">Matcha Matcha<span class="item__featured-tag">Featured</span></h4>
+            <p class="item__desc">Ceremonial matcha, milk, vanilla, matcha cream.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price">8.<sup>00</sup></span>
+            <span class="price">8.<sup>75</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <h4 class="item__name">Strawberry Matcha</h4>
+            <p class="item__desc">Ceremonial matcha, milk, strawberry purée.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price">7.<sup>75</sup></span>
+            <span class="price">8.<sup>50</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <h4 class="item__name">Pistachio Cream</h4>
+            <p class="item__desc">Espresso, milk, pistachio, vanilla cream.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price">7.<sup>75</sup></span>
+            <span class="price">8.<sup>50</sup></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee -->
+    <div class="menu__panel" data-panel="coffee" role="tabpanel">
+      <div class="cat__head">
+        <h3>Coffee</h3>
+        <span class="cat__sub">Hot or iced — 12 oz / 16 oz</span>
+      </div>
+      <div class="items">
+        <div class="item">
+          <div><h4 class="item__name">Americano</h4></div>
+          <div class="item__prices">
+            <span class="price">4.<sup>50</sup></span>
+            <span class="price">4.<sup>75</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div><h4 class="item__name">Latte</h4></div>
+          <div class="item__prices">
+            <span class="price">5.<sup>50</sup></span>
+            <span class="price">6.<sup>00</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div><h4 class="item__name">Mocha</h4></div>
+          <div class="item__prices">
+            <span class="price">6.<sup>00</sup></span>
+            <span class="price">6.<sup>75</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <h4 class="item__name">Espresso</h4>
+            <p class="item__desc">Two shots.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price price--single">3.<sup>75</sup></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Not Coffee -->
+    <div class="menu__panel" data-panel="not-coffee" role="tabpanel">
+      <div class="cat__head">
+        <h3>Not Coffee</h3>
+        <span class="cat__sub">12 oz / 16 oz</span>
+      </div>
+      <div class="items">
+        <div class="item">
+          <div><h4 class="item__name">Matcha Latte</h4></div>
+          <div class="item__prices">
+            <span class="price">6.<sup>50</sup></span>
+            <span class="price">7.<sup>50</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div><h4 class="item__name">Chai Latte</h4></div>
+          <div class="item__prices">
+            <span class="price">6.<sup>00</sup></span>
+            <span class="price">6.<sup>50</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div><h4 class="item__name">Beet Latte</h4></div>
+          <div class="item__prices">
+            <span class="price">5.<sup>75</sup></span>
+            <span class="price">6.<sup>25</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div><h4 class="item__name">Turmeric Latte</h4></div>
+          <div class="item__prices">
+            <span class="price">5.<sup>50</sup></span>
+            <span class="price">6.<sup>00</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div><h4 class="item__name">Strawberry Milk</h4></div>
+          <div class="item__prices">
+            <span class="price">5.<sup>50</sup></span>
+            <span class="price">6.<sup>00</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div><h4 class="item__name">Hot Tea</h4></div>
+          <div class="item__prices">
+            <span class="price price--single">4.<sup>00</sup></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cieros -->
+    <div class="menu__panel" data-panel="cieros" role="tabpanel">
+      <div class="cat__head">
+        <h3>Cieros</h3>
+        <span class="cat__sub">Iced, sparkling — with caffeinated cream</span>
+      </div>
+      <div class="items">
+        <div class="item item--featured">
+          <div>
+            <h4 class="item__name">Strawberry Ciero<span class="item__featured-tag">Featured</span></h4>
+            <p class="item__desc">Sparkling water, strawberry purée, vanilla, caffeinated cream.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price">6.<sup>50</sup></span>
+            <span class="price">6.<sup>75</sup></span>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <h4 class="item__name">White Peach Ciero</h4>
+            <p class="item__desc">Sparkling water, white peach, vanilla, caffeinated cream.</p>
+          </div>
+          <div class="item__prices">
+            <span class="price">6.<sup>50</sup></span>
+            <span class="price">6.<sup>75</sup></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu__foot">
+      <p>
+        Extras — oat, almond or soy milk (+1.<sup style="font-size:.62em;vertical-align:.4em">00</sup>) ·
+        vanilla, hazelnut, caramel, cane sugar syrup (+0.<sup style="font-size:.62em;vertical-align:.4em">75</sup>).
+      </p>
+      <p style="color:var(--fg-accent)">
+        Menu changes occasionally. The board at the bar is the source of truth.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ────────── GALLERY ────────── -->
+<section class="gallery" id="gallery" aria-label="The space">
+  <div class="wrap">
+    <header class="gallery__head" data-reveal>
+      <div>
+        <span class="label label--mint">The Space</span>
+        <h2 class="section-title" style="margin-top:14px" data-comment-anchor="085d8cb100-h2">
+          Plant-filled.<br>Low-lit. <em>Late.</em>
+        </h2>
+      </div>
+      <p style="font-family: var(--font-sans); color: rgba(250,247,241,0.6); font-size: 14.5px; line-height: 1.55; max-width: 32ch; margin: 0">
+        Black hexagon tile. Stained walnut shelving. Globe pendants.
+        Encaustic floor. Steel-frame industrial windows over King Street.
+      </p>
+    </header>
+
+    <div class="gallery__grid" data-reveal>
+      <figure class="gallery__cell gallery__cell--1">
+        <img src="assets/photos/architectural-window.jpg" alt="Double-height steel-frame industrial windows above the door, looking onto King Street.">
+      </figure>
+      <figure class="gallery__cell gallery__cell--2">
+        <img src="assets/photos/back-bar-globes.jpg" alt="Back bar with the lit cursive miero sign, amber globe pendants, hex tile backsplash.">
+      </figure>
+      <figure class="gallery__cell gallery__cell--3">
+        <img src="assets/photos/cabinet-still-life.jpg" alt="Cabinet still life — monstera, a brass lamp, a contemporary houses book.">
+      </figure>
+      <figure class="gallery__cell gallery__cell--4">
+        <img src="assets/photos/floor-tile-detail.jpg" alt="Black, grey and white encaustic floor tile pattern, close up.">
+      </figure>
+      <figure class="gallery__cell gallery__cell--5">
+        <img src="assets/photos/wide-interior.jpg" alt="Wide daylight interior — pendants, plants, hex tile backsplash, walnut shelving." style="object-position: center 55%">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ────────── VISIT ────────── -->
+<section class="visit" id="visit" aria-label="Visit">
+  <div class="wrap">
+    <div class="visit__grid">
+      <div class="visit__intro" data-reveal>
+        <span class="label label--accent">Visit</span>
+        <h2 class="visit__address">
+          665 S King St,<br>
+          Seattle WA 98104.
+        </h2>
+        <p class="visit__neighborhood">
+          Three blocks from Chinatown/ID light rail. Street parking on King.
+          Bike racks out front. Corner of King &amp; Maynard.
+        </p>
+
+        <div class="hours" aria-label="Hours">
+          <div class="hours__row" data-day="Sun"><span class="hours__day">Sunday</span><span></span><span class="hours__time">7am – 10pm <span class="hours__today-tag" data-today-tag style="display:none">· today</span></span></div>
+          <div class="hours__row" data-day="Mon"><span class="hours__day">Monday</span><span></span><span class="hours__time">7am – 10pm <span class="hours__today-tag" data-today-tag style="display:none">· today</span></span></div>
+          <div class="hours__row" data-day="Tue"><span class="hours__day">Tuesday</span><span></span><span class="hours__time">7am – 10pm <span class="hours__today-tag" data-today-tag style="display:none">· today</span></span></div>
+          <div class="hours__row" data-day="Wed"><span class="hours__day">Wednesday</span><span></span><span class="hours__time">7am – 10pm <span class="hours__today-tag" data-today-tag style="display:none">· today</span></span></div>
+          <div class="hours__row" data-day="Thu"><span class="hours__day">Thursday</span><span></span><span class="hours__time">7am – 10pm <span class="hours__today-tag" data-today-tag style="display:none">· today</span></span></div>
+          <div class="hours__row" data-day="Fri"><span class="hours__day">Friday</span><span></span><span class="hours__time">7am – 11pm <span class="hours__today-tag" data-today-tag style="display:none">· today</span></span></div>
+          <div class="hours__row" data-day="Sat"><span class="hours__day">Saturday</span><span></span><span class="hours__time">7am – 11pm <span class="hours__today-tag" data-today-tag style="display:none">· today</span></span></div>
+        </div>
+
+        <div class="contact-row">
+          <a class="contact-row__item" href="tel:+12062221690">
+            <span class="contact-row__label">Phone</span>
+            <span class="contact-row__value">(206) 222-1690</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="contact-row__item" href="https://www.instagram.com/miero.coffeebar" target="_blank" rel="noopener">
+            <span class="contact-row__label">Instagram</span>
+            <span class="contact-row__value">@miero.coffeebar</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="contact-row__item" href="https://maps.google.com/?q=665+S+King+St,+Seattle,+WA+98104" target="_blank" rel="noopener">
+            <span class="contact-row__label">Directions</span>
+            <span class="contact-row__value">Google Maps</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal>
+        <iframe
+          title="Map of Miero Coffee Bar, 665 S King St, Seattle"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=665%20S%20King%20St%2C%20Seattle%2C%20WA%2098104&z=16&output=embed"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ────────── FOOTER ────────── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap">
+    <div class="site-footer__left">
+      <span class="site-footer__sig" data-miero-script></span>
+      <span>665 S King St, Seattle</span>
+    </div>
+    <div class="site-footer__right">
+      <a href="https://www.instagram.com/miero.coffeebar" target="_blank" rel="noopener">@miero.coffeebar</a>
+      <span class="sep">·</span>
+      <span>© 2026 Miero Coffee Bar</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Inline brand wordmarks (defines window.MIERO_WORDMARK_SVG, MIERO_SCRIPT_SVG) -->
+<script src="assets/logos/miero-mark.js"></script>
+
+<!-- GSAP + ScrollTrigger (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="script.js" defer></script>
+<script src="animations.js" defer></script>
+</body>
+</html>
