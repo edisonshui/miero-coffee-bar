@@ -328,7 +328,7 @@
         </p>
       </div>
 
-      <form class="inquiry-form" id="inquiry-form" novalidate>
+      <form class="inquiry-form" id="inquiry-form">
         <div class="inquiry-form__grid">
           <div class="form-field">
             <label class="form-label" for="inq-name">Name</label>
@@ -500,5 +500,31 @@
 
 <script src="script.js" defer></script>
 <script src="animations.js" defer></script>
+<script>
+  document.getElementById('inquiry-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(this));
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        btn.textContent = 'Sent!';
+        this.reset();
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  });
+</script>
 </body>
 </html>
