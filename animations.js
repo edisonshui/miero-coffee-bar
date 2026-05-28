@@ -207,7 +207,7 @@
       // All scrubbed. prefers-reduced-motion handled by the mm.add wrapper above.
 
       // Section entrance: scale 0.96 → 1 as each section approaches (scrub:1 = weighted feel)
-      gsap.utils.toArray('.concept, .gallery, .visit').forEach((section) => {
+      gsap.utils.toArray('.concept, .events, .gallery, .visit').forEach((section) => {
         gsap.fromTo(section,
           { scale: 0.96 },
           {
