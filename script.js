@@ -75,6 +75,64 @@ const MENU_DATA = [
   }
 ];
 
+/* Editorial photo config — maps tab id to image(s) shown alongside menu items */
+const PANEL_PHOTOS = {
+  signatures: {
+    type: 'stack',
+    files: ['Toffee Miso.avif', 'Matcha Matcha.avif'],
+    alts: [
+      'Toffee Miso — espresso, vanilla syrup, milk, toffee miso cream top',
+      'Matcha Matcha — ceremonial grade matcha, vanilla syrup, milk, matcha cream top'
+    ]
+  },
+  coffee: {
+    type: 'cluster',
+    files: ['Flat White - Cortado.avif', 'Americano.avif', 'Espresso.avif'],
+    alts: [
+      'Flat White and Cortado — espresso with steamed milk',
+      'Americano — espresso and water',
+      'Espresso — two shots'
+    ]
+  },
+  'not-coffee': {
+    type: 'cluster',
+    files: ['Strawberry Milk.avif', 'Matcha Latte.avif', 'Beet Latte.avif'],
+    alts: [
+      'Strawberry Milk — milk and strawberry puree',
+      'Matcha Latte — ceremonial grade matcha, milk',
+      'Beet Latte — beetroot, cinnamon, ginger, cloves, milk'
+    ]
+  },
+  cieros: {
+    type: 'pair',
+    files: ['Strawberry Ciero.avif', 'White Peach Ciero.avif'],
+    alts: [
+      'Strawberry Ciero — strawberry puree, sparkling water, Ciero cream top',
+      'White Peach Ciero — white peach syrup, sparkling water, Ciero cream top'
+    ]
+  },
+  pastries: {
+    type: 'grid',
+    files: ['Everything Croissant.avif', 'Cinnamon Roll.avif', 'Chocolate Chip Cookie.avif', 'Spinach & Cheese Roll.avif'],
+    alts: [
+      'Everything Croissant — caramelized onions, parmesan, olive oil, sesame, fennel, poppy seeds',
+      'Cinnamon Roll — cinnamon, brown sugar, cream cheese glaze',
+      'Chocolate Chip Cookie',
+      'Spinach and Cheese Roll — brioche, spinach, fromage blanc, goat cheese, parmesan'
+    ]
+  },
+  desserts: {
+    type: 'grid',
+    files: ['Macaron Ube.avif', 'Macaron Matcha Green Tea.avif', 'Macaron Vietnamese Coffee.avif', 'Macaron Thai Tea.avif'],
+    alts: [
+      'Macaron — Ube',
+      'Macaron — Matcha Green Tea',
+      'Macaron — Vietnamese Coffee',
+      'Macaron — Thai Tea'
+    ]
+  }
+};
+
 /* Miero — site interactivity
    - Menu rendered from MENU_DATA
    - Live open/closed pill (Pacific Time)
@@ -131,8 +189,28 @@ const MENU_DATA = [
           + '</div>';
       }).join('');
 
-      panel.innerHTML = '<div class="cat__head"><h3>' + cat.name + '</h3>' + catSubHtml + '</div>'
-        + '<div class="items">' + itemsHtml + '</div>';
+      const photoConfig = PANEL_PHOTOS[cat.id];
+      const itemsColHtml = '<div class="panel__items">'
+        + '<div class="cat__head"><h3>' + cat.name + '</h3>' + catSubHtml + '</div>'
+        + '<div class="items">' + itemsHtml + '</div>'
+        + '</div>';
+
+      if (photoConfig) {
+        const useTile = photoConfig.type === 'grid';
+        const imgsHtml = photoConfig.files.map(function (file, idx) {
+          const img = '<img src="/assets/food-drink/' + encodeURIComponent(file) + '"'
+            + ' alt="' + photoConfig.alts[idx] + '"'
+            + ' loading="lazy" decoding="async">';
+          return useTile ? '<div class="photo-tile">' + img + '</div>' : img;
+        }).join('');
+        panel.innerHTML = '<div class="panel__body">'
+          + itemsColHtml
+          + '<div class="panel__photo panel__photo--' + photoConfig.type + '">' + imgsHtml + '</div>'
+          + '</div>';
+      } else {
+        panel.innerHTML = '<div class="cat__head"><h3>' + cat.name + '</h3>' + catSubHtml + '</div>'
+          + '<div class="items">' + itemsHtml + '</div>';
+      }
       return panel;
     });
 
