@@ -14,3 +14,11 @@ temporary screenshots/
 # OS
 .DS_Store
 Thumbs.db
+
+# Next.js
+miero-nextjs/.next/
+miero-nextjs/node_modules/
+miero-nextjs/tsconfig.tsbuildinfo
+
+# Claude Code memory
+.claude/
