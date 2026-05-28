@@ -9,7 +9,7 @@
    ============================================================ */
 
 /* --- Fonts: load from Google Fonts (substitutes — see README) --- */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Allison&family=Fredoka:wght@500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Amiko:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* ───────── Brand Palette ───────── */
@@ -86,24 +86,18 @@
   --closed:       var(--bulb-700);
 
   /* ───────── Typography Families ───────── */
-  /* Body sans — clean, modern grotesque. Warm without being quirky. */
-  --font-sans:    'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Editorial serif — Cormorant Garamond. High-contrast, classical,
+     beautiful at large and small sizes. Headlines, menu, display. */
+  --font-serif:   'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-serif-display: var(--font-serif);
 
-  /* Editorial serif — Cormorant Garamond. Calm, transitional, clean f/g/j
-     forms. Matches the delicate serif on the printed menu board. */
-  --font-serif:   'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  /* UI sans — Raleway. Elegant geometric sans, slight Art Deco quality.
+     Navigation, labels, buttons, all structural/UI text. */
+  --font-sans:    'Raleway', ui-sans-serif, system-ui, sans-serif;
 
-  /* Display serif — Fraunces variable, for hero moments where we want
-     a slightly weightier mood. Use sparingly. */
-  --font-serif-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
-
-  /* Script — the bar's cursive "miero" sign. Use SPARINGLY as a
-     signature/flourish — never for body copy. */
-  --font-script:  'Allison', 'Caveat', cursive;
-
-  /* Display — the chunky, rounded storefront "MIERO" wordmark.
-     Use for hero marks, large numerals, "open late" stamps. */
-  --font-display: 'Fredoka', 'M PLUS Rounded 1c', sans-serif;
+  /* Body sans — Amiko. Warm humanist sans. Readable at body sizes.
+     Prose, descriptions, body copy. */
+  --font-body:    'Amiko', ui-sans-serif, system-ui, sans-serif;
 
   /* ───────── Type Scale (mobile-first) ───────── */
   --text-2xs: 0.6875rem;   /* 11 — fine print / superscript cents */
@@ -251,15 +245,15 @@
 }
 
 .t-menu-desc {
-  font-family: var(--font-sans);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: var(--text-sm);
   color: var(--fg-muted);
   letter-spacing: 0.005em;
 }
 
 .t-body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
@@ -267,7 +261,7 @@
 }
 
 .t-body-sm {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
@@ -275,7 +269,7 @@
 }
 
 .t-caption {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: var(--text-xs);
   color: var(--fg-subtle);
@@ -302,7 +296,7 @@
 
 /* Default doc styles when the file is loaded as the root stylesheet */
 html { background: var(--bg); color: var(--fg); }
-body { font-family: var(--font-sans); font-size: var(--text-base); line-height: var(--leading-relaxed); }
+body { font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-relaxed); }
 h1 { font-family: var(--font-serif); font-weight: 400; }
 h2 { font-family: var(--font-serif); font-weight: 400; }
 h3 { font-family: var(--font-sans); font-weight: 600; }

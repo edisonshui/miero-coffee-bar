@@ -142,19 +142,21 @@
         });
       }
 
-      // ──────── Gallery cells — fade + tiny scale ────────
+      // ──────── Gallery cells — fade + translateY (no scale: avoids compositor jank) ────────
       const cells = gsap.utils.toArray('.gallery__cell');
       if (cells.length) {
-        gsap.set(cells, { opacity: 0, scale: 1.02 });
+        gsap.set(cells, { opacity: 0, y: 12 });
         gsap.to(cells, {
           opacity: 1,
-          scale: 1,
+          y: 0,
           duration: 0.7,
           ease: 'power2.out',
           stagger: 0.08,
+          onStart() { cells.forEach(c => { c.style.willChange = 'transform, opacity'; }); },
+          onComplete() { cells.forEach(c => { c.style.willChange = 'auto'; }); },
           scrollTrigger: {
             trigger: '.gallery__grid',
-            start: 'top 82%',
+            start: 'top 90%',
             once: true
           }
         });
@@ -199,6 +201,61 @@
       // ScrollTrigger sometimes needs a refresh after layout/fonts settle.
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(() => ScrollTrigger.refresh());
+      }
+
+      // ──────── Depth — walking-through system ────────
+      // All scrubbed. prefers-reduced-motion handled by the mm.add wrapper above.
+
+      // Section entrance: scale 0.96 → 1 as each section approaches (scrub:1 = weighted feel)
+      gsap.utils.toArray('.concept, .gallery, .visit').forEach((section) => {
+        gsap.fromTo(section,
+          { scale: 0.96 },
+          {
+            scale: 1,
+            ease: 'none',
+            scrollTrigger: { trigger: section, start: 'top 95%', end: 'top 40%', scrub: 1 }
+          }
+        );
+      });
+
+      // Gallery image parallax — images scroll slower, each cell is a window onto a deeper scene
+      gsap.utils.toArray('.gallery__cell img').forEach((img) => {
+        gsap.to(img, {
+          yPercent: -10,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: img.closest('.gallery__cell'),
+            start: 'top bottom', end: 'bottom top', scrub: true
+          }
+        });
+      });
+
+      // Concept image parallax
+      const conceptImg = document.querySelector('.concept__image img');
+      if (conceptImg) {
+        gsap.to(conceptImg, {
+          yPercent: -8,
+          ease: 'none',
+          scrollTrigger: { trigger: '.concept__image', start: 'top bottom', end: 'bottom top', scrub: true }
+        });
+      }
+
+      // Blob parallax — slowest layer (most "distant")
+      const mintBlob = document.querySelector('.blob--mint');
+      if (mintBlob) {
+        gsap.to(mintBlob, {
+          y: -40,
+          ease: 'none',
+          scrollTrigger: { trigger: mintBlob, start: 'top bottom', end: 'bottom top', scrub: true }
+        });
+      }
+      const creamBlob = document.querySelector('.blob--cream');
+      if (creamBlob) {
+        gsap.to(creamBlob, {
+          y: -28,
+          ease: 'none',
+          scrollTrigger: { trigger: creamBlob, start: 'top bottom', end: 'bottom top', scrub: true }
+        });
       }
     }
   );

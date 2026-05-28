@@ -120,6 +120,8 @@ html.has-anim .hero__corner { opacity: 0; }
 section { padding: 80px 0; }
 @media (min-width: 720px) { section { padding: 120px 0; } }
 
+.concept, .gallery, .visit { transform-origin: center center; }
+
 /* ── Header ──────────────────────────────────────────────── */
 .site-header {
   position: fixed;
@@ -442,9 +444,11 @@ section { padding: 80px 0; }
   aspect-ratio: 4 / 5;
   background: var(--bg-elevated);
   overflow: hidden;
+  clip-path: ellipse(92% 90% at 54% 50%);
 }
 .concept__image img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 112%; object-fit: cover;
+  position: relative; top: -6%;
 }
 .concept__image::after {
   content: '';
@@ -457,6 +461,7 @@ section { padding: 80px 0; }
 }
 @media (min-width: 880px) {
   .concept__image::after { display: block; }
+  .concept__image { clip-path: ellipse(88% 92% at 52% 50%); }
 }
 
 /* Brand pillars */
@@ -763,7 +768,8 @@ section { padding: 80px 0; }
   background: var(--walnut-700);
 }
 .gallery__cell img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 115%; object-fit: cover;
+  position: relative; top: -7.5%;
   transition: transform 800ms var(--ease-out);
 }
 .gallery__cell:hover img { transform: scale(1.04); }
@@ -912,6 +918,28 @@ section { padding: 80px 0; }
 .site-footer a { color: rgba(250, 247, 241, 0.7); transition: color 180ms; }
 .site-footer a:hover { color: var(--bg-accent); }
 .site-footer .sep { opacity: 0.4; }
+
+/* ── Blob decorative accents — visual rhyme with Miero logo curves ── */
+.blob {
+  pointer-events: none;
+  overflow: visible;
+  position: relative;
+  z-index: 0;
+}
+.blob--mint {
+  width: 200px; height: 170px;
+  background: var(--mint-100, #dceee7);
+  border-radius: 62% 38% 55% 45% / 52% 64% 36% 48%;
+  margin: -55px auto 0;
+  opacity: 0.6;
+}
+.blob--cream {
+  width: 155px; height: 135px;
+  background: var(--tile-100, #ede9e3);
+  border-radius: 48% 52% 38% 62% / 60% 42% 58% 40%;
+  margin: -44px 10% 0 auto;
+  opacity: 0.5;
+}
 
 /* ── Utilities ───────────────────────────────────────────── */
 .sr-only {
