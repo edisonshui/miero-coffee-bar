@@ -285,8 +285,11 @@ section { padding: 80px 0; }
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center;
+  pointer-events: none;
   filter: brightness(0.62) saturate(0.95) contrast(1.04);
-  /* gentle slow ken-burns so the static cut is breathing */
+}
+.hero__video img {
   animation: heroDrift 32s ease-in-out infinite alternate;
 }
 @keyframes heroDrift {
