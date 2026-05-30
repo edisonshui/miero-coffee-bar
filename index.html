@@ -331,54 +331,9 @@
         </p>
       </div>
 
-      <form class="inquiry-form" id="inquiry-form">
-        <div class="inquiry-form__grid">
-          <div class="form-field">
-            <label class="form-label" for="inq-name">Name</label>
-            <input class="form-input" type="text" id="inq-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="inq-org">Business or organization</label>
-            <input class="form-input" type="text" id="inq-org" name="org" autocomplete="organization">
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="inq-email">Email</label>
-            <input class="form-input" type="email" id="inq-email" name="email" autocomplete="email" required>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="inq-phone">Phone</label>
-            <input class="form-input" type="tel" id="inq-phone" name="phone" autocomplete="tel">
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="inq-type">Type of event</label>
-            <select class="form-input form-select" id="inq-type" name="type">
-              <option value="">Select one</option>
-              <option value="pop-up">Pop-up</option>
-              <option value="collab">Small business collaboration</option>
-              <option value="artist">Artist or maker feature</option>
-              <option value="private">Private gathering</option>
-              <option value="community">Community event</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="inq-date">Preferred date</label>
-            <input class="form-input" type="text" id="inq-date" name="date" placeholder="e.g. June 15, or flexible">
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="inq-guests">Estimated guests</label>
-            <input class="form-input" type="text" id="inq-guests" name="guests" placeholder="e.g. 20–30">
-          </div>
-          <div class="form-field form-field--full">
-            <label class="form-label" for="inq-message">Message</label>
-            <textarea class="form-input form-textarea" id="inq-message" name="message" rows="4"></textarea>
-          </div>
-        </div>
-        <button type="submit" class="btn btn--dark">
-          Send an inquiry
-          <span class="arrow" aria-hidden="true">→</span>
-        </button>
-      </form>
+      <a class="btn btn--dark" href="mailto:miero@endlessgrp.com?subject=Event%20inquiry%20via%20miero.coffee">
+        Email us <span class="arrow" aria-hidden="true">→</span>
+      </a>
     </div>
 
   </div>
@@ -500,39 +455,6 @@
 
 <script src="script.js" defer></script>
 <script src="animations.js" defer></script>
-<script>
-  document.getElementById('inquiry-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const d = Object.fromEntries(new FormData(this));
-    const body = [
-      `Name: ${d.name || '—'}`,
-      `Business / Org: ${d.org || '—'}`,
-      `Email: ${d.email || '—'}`,
-      `Phone: ${d.phone || '—'}`,
-      `Event type: ${d.type || '—'}`,
-      `Preferred date: ${d.date || '—'}`,
-      `Estimated guests: ${d.guests || '—'}`,
-      `Message:\n${d.message || '—'}`,
-    ].join('\n');
-    const mailto = `mailto:miero@endlessgrp.com?subject=${encodeURIComponent('Event inquiry via miero.coffee')}&body=${encodeURIComponent(body)}`;
-    const a = document.createElement('a');
-    a.href = mailto;
-    a.target = '_blank';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    const form = this;
-    const btn = form.querySelector('button[type="submit"]');
-    const container = form.closest('.events__inquiry');
-    const fallback = document.createElement('p');
-    fallback.style.cssText = 'margin-top:1rem;font-size:0.875rem;opacity:0.7;';
-    fallback.innerHTML = `If your email client didn’t open, email us directly at <a href="${mailto}" style="text-decoration:underline">miero@endlessgrp.com</a>.`;
-    btn.insertAdjacentElement('afterend', fallback);
-    btn.textContent = 'Opening your email…';
-    btn.disabled = true;
-  });
-</script>
 
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
