@@ -1041,6 +1041,14 @@ section { padding: 80px 0; }
   max-width: 52ch;
 }
 
+.events__inquiry-email {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--fg-muted);
+  margin: 16px 0 0;
+  user-select: all;
+}
+
 .inquiry-form__grid {
   display: grid;
   gap: 0;
