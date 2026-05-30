@@ -501,29 +501,20 @@
 <script src="script.js" defer></script>
 <script src="animations.js" defer></script>
 <script>
-  document.getElementById('inquiry-form').addEventListener('submit', async function(e) {
+  document.getElementById('inquiry-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    const data = Object.fromEntries(new FormData(this));
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        btn.textContent = 'Sent!';
-        this.reset();
-      } else {
-        btn.textContent = 'Something went wrong — try again';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Something went wrong — try again';
-      btn.disabled = false;
-    }
+    const d = Object.fromEntries(new FormData(this));
+    const body = [
+      `Name: ${d.name || '—'}`,
+      `Business / Org: ${d.org || '—'}`,
+      `Email: ${d.email || '—'}`,
+      `Phone: ${d.phone || '—'}`,
+      `Event type: ${d.type || '—'}`,
+      `Preferred date: ${d.date || '—'}`,
+      `Estimated guests: ${d.guests || '—'}`,
+      `Message:\n${d.message || '—'}`,
+    ].join('\n');
+    window.location.href = `mailto:miero@endlessgrp.com?subject=${encodeURIComponent('Event inquiry via miero.coffee')}&body=${encodeURIComponent(body)}`;
   });
 </script>
 
